@@ -1,0 +1,57 @@
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(2,OUTPUT);
+  pinMode(3,OUTPUT);
+  pinMode(4,OUTPUT);
+  pinMode(5,INPUT);
+  pinMode(6,INPUT);
+  pinMode(7,INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  if(digitalRead(5)==HIGH&&digitalRead(6)==HIGH&&digitalRead(7)==HIGH)
+  {
+    Serial.write("joint 1 is correct\njoint 2 is correct\njoint 3 is correct");
+  }
+  delay(2000);
+  if(digitalRead(5)==HIGH&&digitalRead(6)==LOW&&digitalRead(7)==HIGH)
+  {
+    Serial.write("joint 1 is correct\njoint 2 is not correct\njoint 3 is correct\n");
+  }
+  delay(2000);
+  if(digitalRead(5)==HIGH&&digitalRead(6)==HIGH&&digitalRead(7)==LOW)
+  {
+    Serial.write("joint 1 is correct\njoint 2 is correct\njoint 3 is not correct\n");
+  }
+  delay(2000);
+  if(digitalRead(5)==HIGH&&digitalRead(6)==LOW&&digitalRead(7)==LOW)
+  {
+    Serial.write("joint 1 is correct\njoint 2 is not correct\njoint 3 is not correct\n");
+  }
+  delay(2000);
+   if(digitalRead(5)==LOW&&digitalRead(6)==HIGH&&digitalRead(7)==HIGH)
+  {
+    Serial.write("joint 1 is not correct\njoint 2 is correct\njoint 3 is correct");
+  }
+  delay(2000);
+  if(digitalRead(5)==LOW&&digitalRead(6)==LOW&&digitalRead(7)==HIGH)
+  {
+    Serial.write("joint 1 is not correct\njoint 2 is not correct\njoint 3 is correct\n");
+  }
+  delay(2000);
+  if(digitalRead(5)==LOW&&digitalRead(6)==HIGH&&digitalRead(7)==LOW)
+  {
+    Serial.write("joint 1 is not correct\njoint 2 is correct\njoint 3 is not correct\n");
+  }
+  delay(2000);
+  if(digitalRead(5)==LOW&&digitalRead(6)==LOW&&digitalRead(7)==LOW)
+  {
+    Serial.write("joint 1 is not correct\njoint 2 is not correct\njoint 3 is not correct\n");
+  }
+  delay(2000);
+}

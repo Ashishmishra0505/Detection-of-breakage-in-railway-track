@@ -1,0 +1,16 @@
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  Serial.write("I am ashish mishra and i am doing a project righT now");
+  //passing a random messege to check blutooth module
+  delay(2000);
+  Serial.write("I am ashish mishra and i am not doing a project righT now");
+  //passing a random messege to check blutooth module
+  delay(2000);
+}

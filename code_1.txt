@@ -1,0 +1,21 @@
+int input = 3;
+int output = 2;
+int jointstate;
+void setup() {
+  Serial.begin(9600);
+  pinMode(3, INPUT);
+  pinMode(2,OUTPUT);
+}
+void loop() {
+  digitalWrite(2,HIGH);
+  int jointState = digitalRead(input);
+  if(jointstate==1)
+  {
+  Serial.write("JOINT IS CORRECT");
+  }
+  else
+  {
+  Serial.write("JOINT IS NOT CORRECT");
+  }
+  delay(2000);        // delay in between reads for stability
+}
